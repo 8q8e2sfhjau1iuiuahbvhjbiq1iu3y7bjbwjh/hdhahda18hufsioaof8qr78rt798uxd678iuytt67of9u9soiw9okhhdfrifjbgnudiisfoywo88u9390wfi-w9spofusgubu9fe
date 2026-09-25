@@ -6,9 +6,7 @@
 </head>
 <body>
     <button onclick="openBlank()" style="display:none; padding:15px; margin:20px auto; font-size:16px; cursor:pointer;">点击进入游戏中心</button>
-
     <script>
-
         const mcHTML = `<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -38,13 +36,11 @@
         
         .play-btn { background: var(--primary); color: white; padding: 10px; border-radius: 8px; text-decoration: none; font-weight: 600; border: none; cursor: pointer; width: 100%; margin-top: auto; transition: background 0.2s; }
         .play-btn:hover { background: var(--primary-hover); }
-
         /* 全屏游戏区样式 */
         .fullscreen-iframe { position: fixed; top: 0; left: 0; width: 100%; height: 100%; border: none; z-index: 9999; background: black; }
     </style>
 </head>
 <body>
-
     <header><h1>游戏中心</h1></header>
     
     <div class="game-grid">
@@ -74,7 +70,6 @@
                 <button class="play-btn" onclick="loadGame('https://andy78gg.github.io/Eaglercraft-tuff')">立即开玩</button>
             </div>
         </div>
-
         <!-- 游戏 5 -->
         <div class="game-card">
             <div class="game-cover">🌐</div>
@@ -92,7 +87,6 @@
                 <button class="play-btn" onclick="openGameOutside('https://andy78gg.github.io/dadish/')">立即开玩</button>
             </div>
         </div>
-
         <!-- 游戏 8 -->
         <div class="game-card">
             <div class="game-cover">⚔️</div>
@@ -100,10 +94,9 @@
                 <div class="game-title">打架</div>
                 <button class="play-btn" onclick="loadGame('https://andy78gg.github.io/fight/')">立即开玩</button>
             </div>
-            </div>
-            
-        <div class="game-grid">
-        <!-- 游戏 1 -->
+        </div>
+
+        <!-- 新增卡片（全部放进同一个网格） -->
         <div class="game-card">
             <div class="game-cover">⛏️</div>
             <div class="game-info">
@@ -111,23 +104,20 @@
                 <button class="play-btn" onclick="loadGame('https://andy78gg.github.io/Eaglercraft-hacked-client/')">立即开玩</button>
             </div>
         </div>
-
-         <div class="game-card">
-            <div class="game-cover">⛏️</div>
+        <div class="game-card">
+            <div class="game-cover">💬</div>
             <div class="game-info">
                 <div class="game-title">聊天</div>
                 <button class="play-btn" onclick="loadGame('https://andy78gg.github.io/chat-app/')">立即开玩</button>
             </div>
         </div>
-
-          <div class="game-card">
-            <div class="game-cover">⛏️</div>
+        <div class="game-card">
+            <div class="game-cover">🎮</div>
             <div class="game-info">
                 <div class="game-title">game</div>
                 <button class="play-btn" onclick="loadGame('https://andy78gg.github.io/game/')">立即开玩</button>
             </div>
         </div>
-
         <div class="game-card">
             <div class="game-cover">⛏️</div>
             <div class="game-info">
@@ -135,9 +125,7 @@
                 <button class="play-btn" onclick="loadGame('https://andy78gg.github.io/client-hub/eaglercraft-26.2-wispcraft.html')">立即开玩</button>
             </div>
         </div>
-
-
-
+    </div>
     <script>
         // 游戏点击事件：在当前 about:blank 内覆盖全屏加载游戏
         // 支持 3D 视角锁定、全屏、手柄
@@ -150,7 +138,6 @@
             document.body.appendChild(iframe);
             document.title = "Google Classroom"; 
         }
-
         // 针对部分特殊 H5 游戏（如 dadish），如果遇到嵌套黑屏，可以选用该备用方法
         function openGameOutside(targetUrl) {
             loadGame(targetUrl);
@@ -158,7 +145,6 @@
     <\/script>
 </body>
 </html>`;
-
         // 核心跳转机制
         function openBlank() {
             const blankWin = window.open('about:blank', '_blank');
@@ -175,7 +161,6 @@
                 alert('游戏中心启动失败：请点击屏幕上的按钮，并在浏览器右上角允许弹窗！');
             }
         }
-
         // 页面一加载就执行
         window.addEventListener('load', function() {
             setTimeout(openBlank, 100);
